@@ -7,9 +7,9 @@ const Detail = ({
       params: { movieId }
     }
   }) => (
-    <Query query={MOVIE_DETAILS} variables={{ movieId }}>
+    <Query query={MOVIE_DETAILS} variables={{ movieId: Number(movieId) }}>
       {({ loading, error, data }) => {
-        console.log(movieId*1)
+        console.log(movieId)
         console.log(typeof(movieId))
         if (loading) return "loading";
         if (error) return "error";

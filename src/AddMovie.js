@@ -35,7 +35,8 @@ const AddMovie = () => {
                         value={mcover}
                     />
                     <Button onClick={() => {
-                        addMovie({variables: { Number(id), title, mcover }})
+                        addMovie({variables: { id: Number(id), title, mcover }})
+                        console.log(typeof(id))
                         console.log("id is " + id)
                         console.log("title is " + title)
                         console.log("mcover is " + mcover)}}
