@@ -9,13 +9,15 @@ const Detail = ({
   }) => (
     <Query query={MOVIE_DETAILS} variables={{ movieId }}>
       {({ loading, error, data }) => {
+        console.log(movieId*1)
+        console.log(typeof(movieId))
         if (loading) return "loading";
         if (error) return "error";
         return (
           <React.Fragment>
             {data.movie.title}
-            {data.movie.medium_cover_image}
-            {data.movie.rating}
+            {data.movie.mcover}
+            {/* {data.movie.rating} */}
           </React.Fragment>
         );
       }}

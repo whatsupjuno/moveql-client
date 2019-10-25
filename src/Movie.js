@@ -31,7 +31,8 @@ const Movie = ({ id, title, rating, poster }) => (
   <Link to={`/details/${id}/`}>
     <Card background={poster}>
       <Title>
-        {title} / {rating}⭐️
+        {title} 
+        {/* / {rating}⭐️ */}
       </Title>
     </Card>
   </Link>
@@ -40,7 +41,7 @@ const Movie = ({ id, title, rating, poster }) => (
 Movie.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  rating: PropTypes.number.isRequired,
+  // rating: PropTypes.number.isRequired,
   poster: PropTypes.string.isRequired
 };
 

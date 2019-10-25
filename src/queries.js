@@ -1,14 +1,11 @@
 import gql from "graphql-tag";
 
-
-
 export const HOME_PAGE = gql`
   {
-    movies(limit: 50, rating: 7) {
+    movies {
       id
       title
-      rating
-      medium_cover_image
+      mcover
     }
   }
 `;
@@ -16,10 +13,15 @@ export const HOME_PAGE = gql`
 export const MOVIE_DETAILS = gql`
   query getMovieDetails($movieId: Int!) {
     movie(id: $movieId) {
-      medium_cover_image
+      id
+      mcover
       title
-      rating
-      language
     }
   }
 `;
+
+export const ADD_MOVIE = gql`
+    mutation addMovieMutation($id: String, $title: String, $mcover: String) {
+    addMovie(id: $id, title: $title, mcover: $mcover) 
+  }
+`

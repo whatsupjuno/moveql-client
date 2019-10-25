@@ -5,6 +5,7 @@ import { ApolloProvider } from "react-apollo";
 import client from "./apolloClient";
 import Home from "./Home";
 import Detail from "./Detail";
+import AddMoive from './AddMovie'
 
 class App extends Component {
   render() {
@@ -14,11 +15,12 @@ class App extends Component {
           <main>
             <Route exact={true} path={"/"} component={Home} />
             <Route path={"/details/:movieId"} component={Detail} />
+            <Route path={"/addmovie"} component={AddMoive} />
           </main>
         </Router>
       </ApolloProvider>
     );
-  }
-}
+  };
+};
 
 export default App;
